@@ -24,17 +24,23 @@ typedef struct			s_window
 {
 	void				*mlx_ptr;
 	void				*win_ptr;
-	int					maxIterations;
+	void				*image;
+	int					endian;
+	int					size_line;
+	int					bpp;
+	int					maxI;
 	double				newRe;
 	double				newIm;
 	double				oldRe;
 	double				oldIm;
 	double				pr;
 	double				pi;
-	double				moveX;
-	double				moveY;
-	double				zoom;
-	unsigned int		color;
+	double				mvX;
+	double				mvY;
+	double				zm;
+	int					clr;
+	int					*adr;
+	int					fractol;
 }						t_window;
 
 #endif
