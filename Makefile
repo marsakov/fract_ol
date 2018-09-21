@@ -11,7 +11,7 @@
 #******************************************************************************#
 
 NAME = fractol
-SRCS = main.c
+SRCS = main.c fractals.c
 FLAGS = -Wall -Werror -Wextra
 
 OBJS = $(SRCS:.c=.o)

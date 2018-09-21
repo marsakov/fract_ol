@@ -19,6 +19,11 @@
 
 # define HEIGHT 600
 # define WIDTH 800
+# define R 255 - (i * 252 % 256)
+# define G 255 - ((i * 500) % 256)
+# define JULIA (!ft_strcmp("Julia", av[1]) || !ft_strcmp("julia", av[1]))
+# define MANDELBROT !ft_strcmp("Mandelbrot", av[1])
+# define TRICORN (!ft_strcmp("Tricorn", av[1]) || !ft_strcmp("tricorn", av[1]))
 
 typedef struct			s_window
 {
@@ -28,19 +33,29 @@ typedef struct			s_window
 	int					endian;
 	int					size_line;
 	int					bpp;
-	int					maxI;
-	double				newRe;
-	double				newIm;
-	double				oldRe;
-	double				oldIm;
+	int					maxi;
+	double				newre;
+	double				newim;
+	double				oldre;
+	double				oldim;
 	double				pr;
 	double				pi;
-	double				mvX;
-	double				mvY;
+	double				mvx;
+	double				mvy;
 	double				zm;
 	int					clr;
 	int					*adr;
 	int					fractol;
 }						t_window;
+
+int			clr(int r, int g, int b);
+void		mandelbrot(t_window *w, int x, int y, int i);
+void		tricorn(t_window *w, int x, int y, int i);
+void		julia(t_window *w, int x, int y, int i);
+int			deal_key(int key, t_window *w);
+int			zoom_jul(int x, int y, t_window *w);
+int			zoom(int key, int x, int y, t_window *w);
+int			exit_x(void);
+t_window	*create_wind(char **av, t_window *w);
 
 #endif
