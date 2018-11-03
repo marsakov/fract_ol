@@ -24,7 +24,6 @@ int			exit_x(void)
 
 void		mandelbrot(t_window *w, int x, int y, int i)
 {
-	w->mvx = -0.5;
 	w->maxi = 300;
 	while (++y < HEIGHT && (x = -1))
 		while (++x < WIDTH && (i = -1))
@@ -52,7 +51,6 @@ void		mandelbrot(t_window *w, int x, int y, int i)
 
 void		tricorn(t_window *w, int x, int y, int i)
 {
-	w->mvx = 0;
 	w->maxi = 300;
 	while (++y < HEIGHT && (x = -1))
 		while (++x < WIDTH && (i = -1))

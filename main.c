@@ -14,17 +14,16 @@
 
 int			deal_key(int key, t_window *w)
 {
-	ft_printf("%d\n", key);
 	if (key == 53)
 		exit(1);
 	else if (key == 126)
-		w->mvy += 0.3;
-	else if (key == 125)
 		w->mvy -= 0.3;
+	else if (key == 125)
+		w->mvy += 0.3;
 	else if (key == 123)
-		w->mvx += 0.3;
-	else if (key == 124)
 		w->mvx -= 0.3;
+	else if (key == 124)
+		w->mvx += 0.3;
 	else if (key == 78)
 		w->zm *= 1.25;
 	else if (key == 69)
@@ -73,7 +72,7 @@ int			zoom(int key, int x, int y, t_window *w)
 t_window	*create_wind(char **av, t_window *w)
 {
 	w->zm = TRICORN ? 0.7 : 1;
-	w->mvx = 0;
+	w->mvx = !ft_strcmp("mandelbrot", av[1]) || MANDELBROT ? -0.5 : 0;
 	w->mvy = 0;
 	w->clr = 6;
 	w->endian = 0;
